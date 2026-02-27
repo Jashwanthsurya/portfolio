@@ -1,14 +1,29 @@
 import { type Express } from "express";
-import { createServer as createViteServer, createLogger } from "vite";
+import type { Logger } from "vite";
 import { type Server } from "http";
 import viteConfig from "../vite.config";
 import fs from "fs";
 import path from "path";
 import { nanoid } from "nanoid";
+import { fileURLToPath } from "url";
+import crypto from "node:crypto";
 
-const viteLogger = createLogger();
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export async function setupVite(server: Server, app: Express) {
+  // Vite 7 expects crypto.hash, which is unavailable in Node 18.
+  const nodeCrypto = crypto as any;
+  if (typeof nodeCrypto.hash !== "function") {
+    nodeCrypto.hash = (
+      algorithm: string,
+      data: crypto.BinaryLike,
+      outputEncoding: crypto.BinaryToTextEncoding = "hex",
+    ) => crypto.createHash(algorithm).update(data).digest(outputEncoding);
+  }
+
+  const { createServer: createViteServer, createLogger } = await import("vite");
+  const viteLogger: Logger = createLogger();
+
   const serverOptions = {
     middlewareMode: true,
     hmr: { server, path: "/vite-hmr" },
@@ -36,7 +51,7 @@ export async function setupVite(server: Server, app: Express) {
 
     try {
       const clientTemplate = path.resolve(
-        import.meta.dirname,
+        __dirname,
         "..",
         "client",
         "index.html",

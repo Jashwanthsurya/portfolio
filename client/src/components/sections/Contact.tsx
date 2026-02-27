@@ -54,13 +54,13 @@ export default function Contact() {
               <h3 className="text-2xl font-bold text-white mb-8">Contact Information</h3>
               
               <div className="space-y-6">
-                <a href="mailto:jashwanth.a22@bmsce.ac.in" className="flex items-center gap-4 group">
+                <a href="mailto:jashwanth.ei22@bmsce.ac.in" className="flex items-center gap-4 group">
                   <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                     <Mail size={20} />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">College Email</p>
-                    <p className="text-white font-medium group-hover:text-primary transition-colors">jashwanth.a22@bmsce.ac.in</p>
+                    <p className="text-white font-medium group-hover:text-primary transition-colors">jashwanth.ei22@bmsce.ac.in</p>
                   </div>
                 </a>
 

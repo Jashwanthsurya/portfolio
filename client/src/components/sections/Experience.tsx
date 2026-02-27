@@ -5,13 +5,13 @@ const EXPERIENCES = [
   {
     role: "Intern",
     company: "Sakha Global",
-    period: "Recent",
+    period: "Ongoing",
     description: "Contributed to software development lifecycles, assisted in infrastructure management, and collaborated with senior engineers on cloud-based solutions.",
   },
   {
     role: "Intern",
     company: "Octagon Back Private Ltd",
-    period: "Past",
+    period: "Ongoing Remote",
     description: "Worked on building scalable backend services and involved in full-stack feature development. Focused on efficient database queries and API integration.",
   }
 ];

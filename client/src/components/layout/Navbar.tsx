@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
+  { name: "Resume", href: "/resume.pdf", target: "_blank", rel: "noopener noreferrer" },
 ];
 
 export default function Navbar() {
@@ -42,6 +43,8 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
+                target={link.target}
+                rel={link.rel}
                 className="text-sm font-medium text-muted-foreground hover:text-white transition-colors duration-200"
               >
                 {link.name}
@@ -80,6 +83,8 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
+                  target={link.target}
+                  rel={link.rel}
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-lg font-medium text-muted-foreground hover:text-white"
                 >

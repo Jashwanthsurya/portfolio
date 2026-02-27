@@ -10,7 +10,7 @@ const EXPERIENCES = [
   },
   {
     role: "Intern",
-    company: "Octagon Back Private Ltd",
+    company: "Octagon Bock Private Ltd",
     period: "Ongoing Remote",
     description: "Worked on building scalable backend services and involved in full-stack feature development. Focused on efficient database queries and API integration.",
   }
